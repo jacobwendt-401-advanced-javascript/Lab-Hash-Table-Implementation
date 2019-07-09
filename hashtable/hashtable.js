@@ -9,11 +9,11 @@ var hash = (string, max) => {
 let HashTable = function() {
 
   let storage = [];
-  const storageLimit = 14;
+  const storageLimit = 50;
   
   this.print = function() {
     console.log(storage)
-  }
+  };
 
   this.add = function(key, value) {
     var index = hash(key, storageLimit);
@@ -60,5 +60,20 @@ let HashTable = function() {
       }
     }
   };
-
 };
+
+let chess = new HashTable();
+chess.add('Jacob', 'King');
+chess.add('Floyd', 'Bishop');
+chess.add('Michele', 'Pawn');
+chess.add('Skylar', 'Rook');
+chess.add('Rory', 'Rook');
+chess.add('Austin', 'Knight');
+chess.add('Ian', 'Pawn');
+chess.add('Craig', 'Pawn');
+chess.add('Keith', 'Knight');
+
+chess.lookup('Ian');
+chess.lookup('Dusty');
+
+module.exports = HashTable;
